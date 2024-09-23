@@ -15,6 +15,39 @@ public class Main {
 
     public static void test(int[] itemPrices) {
         // ここから
+        double amount = 0;
+        for(int i= 0; i<itemPrices.length; i++) {
+            amount += itemPrices[i];
+        }
+
+        // System.out.println(amount);
+
+        double A = amount;
+
+        double B = 0;
+        B = amount * 0.9;
+        if(B < 5000) {
+            B += 800;
+        }
+
+        double C = 0;
+        for(int i= 0; i<itemPrices.length; i++) {
+            if(itemPrices[i] >= 2000) {
+                C += itemPrices[i] * 0.8;
+            }
+        }
+        C = amount - C;
+        if(C <5000) {
+            C += 800;
+        }
+
+        if(A < B && A < C) {
+            System.out.println("A");
+        } else if(B < A && B < C) {
+            System.out.println("B");
+        } else {
+            System.out.println("C");
+        }
         // ここまで
     }
 }
